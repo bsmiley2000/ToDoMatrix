@@ -1,0 +1,36 @@
+﻿@page
+@model ToDoMatrix.Views.Home.TaskModel
+@{
+}
+
+<h1>Add a Task</h1>
+<form method="post">
+
+    <label asp-for="Task">Task: </label>
+    <input asp-for="Task" /><br />
+
+    <label asp-for="Urgent">Urgent: </label>
+    <select asp-for="Urgent">
+        <option value="false"></option>
+        <option value="true">Urgent</option>
+    </select><br />
+
+    <label asp-for="Important">Important: </label>
+    <select asp-for="Important">
+        <option value="false"></option>
+        <option value="true">Important</option>
+    </select><br />
+
+    <label asp-for="Category">Category: </label>
+    <select asp-for="Category">
+        <option value="Home">Home</option>
+        <option value="School">School</option>
+        <option value="Work">Work</option>
+        <option value="Church">Church</option>
+    </select><br />
+
+
+    <button type="submit">Submit Task</button>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    @*ModelOnly*@
+</form>
