@@ -15,11 +15,5 @@ namespace ToDoMatrix.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
     }
 }
