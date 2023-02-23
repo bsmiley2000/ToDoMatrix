@@ -2,11 +2,11 @@
     ViewData["Title"] = "Delete Task";
 }
 
-@model TaskModel
+@model ToDoMatrix.Models.TaskModel
 
 <h2>Confirm Deletion</h2>
 
-<h3>Are you sure that you would like to delete this task?</h3>
+<h3>Are you sure that you would like to delete @Model.Task?</h3>
 
 <form method="POST" asp-action="Delete">
     <button type="submit">Delete</button>
