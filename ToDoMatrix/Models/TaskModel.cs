@@ -12,8 +12,7 @@ namespace ToDoMatrix.Models
         public int TaskId { get; set; }
         [Required]
         public string Task { get; set; }
-        public bool Urgent { get; set; }
-        public bool Important { get; set; }
+        public string Urgent { get; set; }
 
         public int CategoryId { get; set; }
         public Category Category { get; set; }
