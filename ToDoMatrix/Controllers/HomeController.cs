@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
-/*using System.Linq; This will be used for the db*/
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -25,14 +24,22 @@ namespace ToDoMatrix.Controllers
         {
             return View();
         }*/
-        public IActionResult Task()
+/*        public IActionResult Task()
         {
             return View(); //"Task"
-        }
+        }*/
 
         // This is going to post the to do list to the db and possibly
         // return a confirmation page. It will do all of this if the 
         // models are valid. If it's not it will return the view
+
+        [HttpGet]
+        public IActionResult Task()
+        {
+            ViewBag.Categories = matrixApplicationContext.Categories.ToList();
+
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Task(TaskModel tm)
@@ -60,8 +67,8 @@ namespace ToDoMatrix.Controllers
         public IActionResult Index()
         {
             var applications = matrixApplicationContext.Responses
-                .Include(x => x.Category)
-                .OrderBy(x => x.Task)
+          /*      .Include(x => x.Category)
+                .OrderBy(x => x.Task)*/
                 .ToList();
 
             return View(applications);
@@ -94,9 +101,9 @@ namespace ToDoMatrix.Controllers
 
         // This will find the todo in the db to delete
         [HttpGet]
-        public IActionResult Delete(int categoryid)
+        public IActionResult Delete(int taskid)
         {
-            var application = matrixApplicationContext.Responses.Single(x => x.CategoryId == categoryid);
+            var application = matrixApplicationContext.Responses.Single(x => x.TaskId == taskid);
 
             return View(application);
         }
@@ -108,7 +115,7 @@ namespace ToDoMatrix.Controllers
             matrixApplicationContext.Responses.Remove(tm);
             matrixApplicationContext.SaveChanges();
 
-            return RedirectToAction("TodoHome");
+            return RedirectToAction("Index");
         }
 
 
