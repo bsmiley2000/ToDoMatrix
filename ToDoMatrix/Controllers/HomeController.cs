@@ -7,46 +7,46 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-/*using ToDoMatrix.Models; this will import models */
+using ToDoMatrix.Models;
 
 namespace ToDoMatrix.Controllers
 {
     public class HomeController : Controller
     {
-/*        // This is setting up the db to a variable
-        private ToDoContext todoContext { get; set; }
-        public HomeController(ToDoContext tdx)
+        // This is setting up the db to a variable
+        private MatrixApplicationContext matrixApplicationContext { get; set; }
+        public HomeController(MatrixApplicationContext x)
         {
-            todoContext = tdx;
+            matrixApplicationContext = x;
         }
-*/
 
-        public IActionResult Index()
+
+/*        public IActionResult Index()
         {
             return View();
-        }
+        }*/
         public IActionResult Task()
         {
-            return View();
+            return View(); //"Task"
         }
 
         // This is going to post the to do list to the db and possibly
         // return a confirmation page. It will do all of this if the 
         // models are valid. If it's not it will return the view
 
-/*        [HttpPost]
-        public IActionResult MovieForm(ApplicationResponse ar)
+        [HttpPost]
+        public IActionResult Task(TaskModel tm)
         {
             if (ModelState.IsValid)
             {
-                todoContext.Add(ar);
-                todoContext.SaveChanges();
+                matrixApplicationContext.Add(tm);
+                matrixApplicationContext.SaveChanges();
 
-                return View("Confirmation", ar);
+                return View("Index", tm);
             }
             else
             {
-                ViewBag.Categories = todoContext.Categories.ToList();
+                ViewBag.Categories = matrixApplicationContext.Categories.ToList();
 
                 return View();
             }
@@ -57,11 +57,11 @@ namespace ToDoMatrix.Controllers
         // This will be getting at the todos are returning them to a list
         // in the view
         [HttpGet]
-        public IActionResult WaitList()
+        public IActionResult Index()
         {
-            var applications = todoContext.Responses
+            var applications = matrixApplicationContext.Responses
                 .Include(x => x.Category)
-                .OrderBy(x => x.Title)
+                .OrderBy(x => x.Task)
                 .ToList();
 
             return View(applications);
@@ -71,45 +71,45 @@ namespace ToDoMatrix.Controllers
         // This is going to get the correct todo when edit
         // button is hit
         [HttpGet]
-        public IActionResult Edit(int applicationid)
+        public IActionResult Edit(int categoryid)
         {
-            ViewBag.Categories = todoContext.Categories.ToList();
+            ViewBag.Categories = matrixApplicationContext.Categories.ToList();
 
-            var application = todoContext.Responses.FirstOrDefault(x => x.ApplicationId == applicationid);
+            var application = matrixApplicationContext.Responses.FirstOrDefault(x => x.CategoryId == categoryid);
 
-            return View("ToDForm", application);
+            return View("Task", application);
         }
 
 
         // this is going to post the changes made to the todo
         [HttpPost]
-        public IActionResult Edit(ApplicationResponse ar)
+        public IActionResult Edit(TaskModel tm)
         {
-            todoContext.Update(ar);
-            todoContext.SaveChanges();
+            matrixApplicationContext.Update(tm);
+            matrixApplicationContext.SaveChanges();
 
-            return RedirectToAction("TodoHome");
+            return RedirectToAction("Index");
         }
 
 
         // This will find the todo in the db to delete
         [HttpGet]
-        public IActionResult Delete(int applicationid)
+        public IActionResult Delete(int categoryid)
         {
-            var application = todoContext.Responses.Single(x => x.ApplicationId == applicationid);
+            var application = matrixApplicationContext.Responses.Single(x => x.CategoryId == categoryid);
 
             return View(application);
         }
 
         // this will actually delete the db
         [HttpPost]
-        public IActionResult Delete(ApplicationResponse ar)
+        public IActionResult Delete(TaskModel tm)
         {
-            todoContext.Responses.Remove(ar);
-            todoContext.SaveChanges();
+            matrixApplicationContext.Responses.Remove(tm);
+            matrixApplicationContext.SaveChanges();
 
             return RedirectToAction("TodoHome");
-        }*/
+        }
 
 
     }
