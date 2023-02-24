@@ -26,6 +26,48 @@ namespace ToDoMatrix.Models
                 new Category { CategoryId = 4, CategoryName = "Church" }
                 );
 
+            mb.Entity<TaskModel>().HasData(
+                new TaskModel
+                {
+                    TaskId = 1,
+                    Task = "Wash the dog",
+                    Urgent = "Q1",
+                    Completed = true,
+
+                    CategoryId = 1
+                },
+                new TaskModel
+                {
+                    TaskId = 2,
+                    Task = "IS 413 Assignment",
+                    Urgent = "Q2",
+                    Completed = true,
+
+                    CategoryId = 2
+                },
+                new TaskModel
+                {
+                    TaskId = 3,
+                    Task = "Big Presentation",
+                    Urgent = "Q3",
+                    Completed = true,
+
+                    CategoryId = 3
+                },
+                new TaskModel
+                {
+                    TaskId = 4,
+                    Task = "Sacrament Meeting Talk",
+                    Urgent = "Q4",
+                    Completed = true,
+
+                    CategoryId = 4
+                }
+
+                );
         }
+
+            
     }
 }
+

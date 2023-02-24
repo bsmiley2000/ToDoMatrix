@@ -22,7 +22,8 @@ namespace ToDoMatrix.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var taskList = matrixApplicationContext.Responses.ToList();
+            return View(taskList);
         }
         /*        public IActionResult Task()
                 {

@@ -29,7 +29,7 @@ namespace ToDoMatrix
 
             services.AddDbContext<MatrixApplicationContext>(options =>
            {
-               options.UseSqlite(Configuration["ConnectionStrings:DbConnection"]);
+               options.UseSqlite(Configuration["ConnectionStrings:SqlLiteConnection"]);
            });
         }
 
