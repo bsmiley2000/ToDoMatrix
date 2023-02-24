@@ -7,25 +7,25 @@
 
 
 
-<h2>Stephen Covey's Time Management Matrix</h2>
+<h2 class="text-center">Stephen Covey's Time Management Matrix</h2>
 
 <div class="container">
-    <div class="row">
+    <div class="row flex-nowrap">
         <div class="col"></div>
-        <div class="col">
+        <div class="col align-content-center">
             <h3>Urgent</h3>
         </div>
-        <div class="col">
+        <div class="col align-content-center">
             <h3>Not Urgent</h3>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row flex-nowrap">
+        <div class="col align-content-center">
             <h3>Important</h3>
         </div>
-        <div class="col">
-            <h4>Quadrant 1</h4>
-            <table class="table table-bordered table-active">
+        <div class="col align-content-center">
+            <h4 class="align-content-center">Quadrant 1</h4>
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Task</td>
@@ -42,19 +42,19 @@
                             <tr>
                                 <td>@x.Task</td>
                                 <td>@x.Date</td>
-                                <td>@x.Category</td>
+                                <td>@x.CategoryId</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId" class="btn btn-outline-dark">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId" class="btn btn-outline-success">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
                 </tbody>
             </table>
         </div>
-        <div class="col">
-            <h4>Quadrant 2</h4>
-            <table class="table table-bordered table-active">
+        <div class="col align-content-center">
+            <h4 class="align-content-center">Quadrant 2</h4>
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Task</td>
@@ -71,10 +71,10 @@
                             <tr>
                                 <td>@x.Task</td>
                                 <td>@x.Date</td>
-                                <td>@x.Category</td>
+                                <td>@x.CategoryId</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId" class="btn btn-outline-dark">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId" class="btn btn-outline-success">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
@@ -82,13 +82,13 @@
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row flex-nowrap">
+        <div class="col align-content-center">
             <h3>Not Important</h3>
         </div>
-        <div class="col">
-            <h4>Quadrant 3</h4>
-            <table class="table table-bordered table-active">
+        <div class="col align-content-center">
+            <h4 class="align-content-center">Quadrant 3</h4>
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Task</td>
@@ -105,19 +105,19 @@
                             <tr>
                                 <td>@x.Task</td>
                                 <td>@x.Date</td>
-                                <td>@x.Category</td>
+                                <td>@x.CategoryId</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId" class="btn btn-outline-dark">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId" class="btn btn-outline-success">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
                 </tbody>
             </table>
         </div>
-        <div class="col">
-            <h4>Quadrant 4</h4>
-            <table class="table table-bordered table-active">
+        <div class="col align-content-center">
+            <h4 class="align-content-center">Quadrant 4</h4>
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Task</td>
@@ -134,10 +134,10 @@
                             <tr>
                                 <td>@x.Task</td>
                                 <td>@x.Date</td>
-                                <td>@x.Category</td>
+                                <td>@x.CategoryId</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId" class="btn btn-outline-dark">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId" class="btn btn-outline-success">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
