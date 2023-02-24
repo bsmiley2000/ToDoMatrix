@@ -2,8 +2,6 @@
     ViewData["Title"] = "Task";
 }
 
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
 @model ToDoMatrix.Models.TaskModel
 
 <h1>Add a Task</h1> 
@@ -25,14 +23,14 @@
         </select><br />
 
 
-@*        <label asp-for="CategoryId">Category: </label>
+        <label asp-for="CategoryId">Category: </label>
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
-        </select><br />*@
+        </select><br />
 
         <label asp-for="Completed">Completed: </label>
         <select asp-for="Completed">
