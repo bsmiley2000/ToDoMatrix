@@ -20,14 +20,14 @@ namespace ToDoMatrix.Controllers
         }
 
 
-/*        public IActionResult Index()
+        public IActionResult Index()
         {
             return View();
-        }*/
-/*        public IActionResult Task()
-        {
-            return View(); //"Task"
-        }*/
+        }
+        /*        public IActionResult Task()
+                {
+                    return View(); //"Task"
+                }*/
 
         // This is going to post the to do list to the db and possibly
         // return a confirmation page. It will do all of this if the 
@@ -63,7 +63,7 @@ namespace ToDoMatrix.Controllers
 
         // This will be getting at the todos are returning them to a list
         // in the view
-        [HttpGet]
+/*        [HttpGet]
         public IActionResult Index()
         {
             var applications = matrixApplicationContext.Responses
@@ -74,15 +74,15 @@ namespace ToDoMatrix.Controllers
             return View(applications);
 
         }
-
+*/
         // This is going to get the correct todo when edit
         // button is hit
         [HttpGet]
-        public IActionResult Edit(int categoryid)
+        public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = matrixApplicationContext.Categories.ToList();
 
-            var application = matrixApplicationContext.Responses.FirstOrDefault(x => x.CategoryId == categoryid);
+            var application = matrixApplicationContext.Responses.FirstOrDefault(x => x.TaskId == taskid);
 
             return View("Task", application);
         }

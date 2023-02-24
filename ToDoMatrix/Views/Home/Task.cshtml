@@ -6,22 +6,23 @@
 
 @model ToDoMatrix.Models.TaskModel
 
-<h1>Add a Task</h1>
-<form method="post">
+<h1>Add a Task</h1> 
+<div>
+    <form method="post">
 
-    <label asp-for="Task">Task: </label>
-    <input asp-for="Task" /><br />
+        <label asp-for="Task">Task: </label>
+        <input asp-for="Task" /><br />
 
-    <label asp-for="Date">Due Date: </label>
-    <input asp-for="Date" /><br />
+        <label asp-for="Date">Due Date: </label>
+        <input asp-for="Date" /><br />
 
-    <label asp-for="Urgent">Quadrant: </label>
-    <select asp-for="Urgent">
-        <option value="Q1">Urgent and Important</option>
-        <option value="Q2">Not Urgent and Important</option>
-        <option value="Q3">Urgent and Not Important</option>
-        <option value="Q4">Not Urgent and Not Important</option>
-    </select><br />
+        <label asp-for="Urgent">Quadrant: </label>
+        <select asp-for="Urgent">
+            <option value="Q1">Urgent and Important</option>
+            <option value="Q2">Not Urgent and Important</option>
+            <option value="Q3">Urgent and Not Important</option>
+            <option value="Q4">Not Urgent and Not Important</option>
+        </select><br />
 
 
 @*        <label asp-for="CategoryId">Category: </label>
@@ -33,14 +34,15 @@
             }
         </select><br />*@
 
-    <label asp-for="Completed">Completed: </label>
-    <select asp-for="Completed">
-        <option value="false"></option>
-        <option value="true">Yes</option>
-    </select><br />
+        <label asp-for="Completed">Completed: </label>
+        <select asp-for="Completed">
+            <option value="false"></option>
+            <option value="true">Yes</option>
+        </select><br />
 
 
-    <button type="submit">Submit Task</button>
-    <div asp-validation-summary="All" class="text-danger"></div>
-    @*ModelOnly*@
-</form>
+        <button type="submit">Submit Task</button>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @*ModelOnly*@
+    </form>
+</div>
