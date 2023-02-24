@@ -36,7 +36,7 @@ namespace ToDoMatrix.Controllers
 
         [HttpGet]
         public IActionResult Task()
-        {
+                                                   {
             ViewBag.Categories = matrixApplicationContext.Categories.ToList();
 
             return View();
