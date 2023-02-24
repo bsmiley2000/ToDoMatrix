@@ -36,7 +36,7 @@ namespace ToDoMatrix.Controllers
 
         [HttpGet]
         public IActionResult Task()
-        {
+                                                   {
             ViewBag.Categories = matrixApplicationContext.Categories.ToList();
             TaskModel model = new TaskModel();
             return View(model);
