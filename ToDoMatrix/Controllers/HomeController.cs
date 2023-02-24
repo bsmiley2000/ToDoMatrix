@@ -50,32 +50,18 @@ namespace ToDoMatrix.Controllers
                 matrixApplicationContext.Add(tm);
                 matrixApplicationContext.SaveChanges();
 
-                return View("Index", tm);
+                return View("Confirmation", tm);
             }
             else
             {
                 ViewBag.Categories = matrixApplicationContext.Categories.ToList();
 
-                return View();
+                return View(tm);
             }
 
         }
 
 
-        // This will be getting at the todos are returning them to a list
-        // in the view
-/*        [HttpGet]
-        public IActionResult Index()
-        {
-            var applications = matrixApplicationContext.Responses
-                .Include(x => x.Category)
-                .OrderBy(x => x.Task)
-                .ToList();
-
-            return View(applications);
-
-        }
-*/
         // This is going to get the correct todo when edit
         // button is hit
         [HttpGet]

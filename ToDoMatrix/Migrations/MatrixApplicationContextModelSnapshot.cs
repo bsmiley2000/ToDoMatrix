@@ -86,7 +86,7 @@ namespace ToDoMatrix.Migrations
                         {
                             TaskId = 1,
                             CategoryId = 1,
-                            Completed = true,
+                            Completed = false,
                             Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Task = "Wash the dog",
                             Urgent = "Q1"
@@ -95,7 +95,7 @@ namespace ToDoMatrix.Migrations
                         {
                             TaskId = 2,
                             CategoryId = 2,
-                            Completed = true,
+                            Completed = false,
                             Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Task = "IS 413 Assignment",
                             Urgent = "Q2"
@@ -104,7 +104,7 @@ namespace ToDoMatrix.Migrations
                         {
                             TaskId = 3,
                             CategoryId = 3,
-                            Completed = true,
+                            Completed = false,
                             Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Task = "Big Presentation",
                             Urgent = "Q3"
@@ -113,7 +113,7 @@ namespace ToDoMatrix.Migrations
                         {
                             TaskId = 4,
                             CategoryId = 4,
-                            Completed = true,
+                            Completed = false,
                             Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Task = "Sacrament Meeting Talk",
                             Urgent = "Q4"

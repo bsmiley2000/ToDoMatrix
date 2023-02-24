@@ -32,7 +32,7 @@ namespace ToDoMatrix.Models
                     TaskId = 1,
                     Task = "Wash the dog",
                     Urgent = "Q1",
-                    Completed = true,
+                    Completed = false,
 
                     CategoryId = 1
                 },
@@ -41,7 +41,7 @@ namespace ToDoMatrix.Models
                     TaskId = 2,
                     Task = "IS 413 Assignment",
                     Urgent = "Q2",
-                    Completed = true,
+                    Completed = false,
 
                     CategoryId = 2
                 },
@@ -50,7 +50,7 @@ namespace ToDoMatrix.Models
                     TaskId = 3,
                     Task = "Big Presentation",
                     Urgent = "Q3",
-                    Completed = true,
+                    Completed = false,
 
                     CategoryId = 3
                 },
@@ -59,7 +59,7 @@ namespace ToDoMatrix.Models
                     TaskId = 4,
                     Task = "Sacrament Meeting Talk",
                     Urgent = "Q4",
-                    Completed = true,
+                    Completed = false,
 
                     CategoryId = 4
                 }
