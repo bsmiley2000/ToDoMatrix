@@ -67,8 +67,8 @@ namespace ToDoMatrix.Controllers
         public IActionResult Index()
         {
             var applications = matrixApplicationContext.Responses
-          /*      .Include(x => x.Category)
-                .OrderBy(x => x.Task)*/
+                .Include(x => x.Category)
+                .OrderBy(x => x.Task)
                 .ToList();
 
             return View(applications);
