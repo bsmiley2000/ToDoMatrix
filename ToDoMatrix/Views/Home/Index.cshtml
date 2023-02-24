@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model List<ToDoMatrix.Models.TaskModel>
 
 <h2>Stephen Covey's Time Management Matrix</h2>
@@ -35,15 +37,15 @@
                 <tbody>
                     @foreach (var x in Model)
                     {
-                        @if (x.Urgent == 1)
+                        @if (x.Urgent == "Q1")
                         {
                             <tr>
                                 <td>@x.Task</td>
-                                <td>@x.DueDate</td>
+                                <td>@x.Date</td>
                                 <td>@x.Category</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@x.MovieId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@x.MovieId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
@@ -65,15 +67,15 @@
                 <tbody>
                     @foreach (var x in Model)
                     {
-                        @if (x.Quadrant == 2)
+                        @if (x.Urgent == "Q1")
                         {
                             <tr>
                                 <td>@x.Task</td>
-                                <td>@x.DueDate</td>
+                                <td>@x.Date</td>
                                 <td>@x.Category</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@x.MovieId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@x.MovieId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
@@ -100,15 +102,15 @@
                 <tbody>
                     @foreach (var x in Model)
                     {
-                        @if (x.Quadrant == 1)
+                        @if (x.Urgent == "Q3")
                         {
                             <tr>
                                 <td>@x.Task</td>
-                                <td>@x.DueDate</td>
+                                <td>@x.Date</td>
                                 <td>@x.Category</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@x.MovieId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@x.MovieId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
@@ -130,15 +132,15 @@
                 <tbody>
                     @foreach (var x in Model)
                     {
-                        @if (x.Quadrant == 1)
+                        @if (x.Urgent == "Q4")
                         {
                             <tr>
                                 <td>@x.Task</td>
-                                <td>@x.DueDate</td>
+                                <td>@x.Date</td>
                                 <td>@x.Category</td>
                                 <td>@x.Completed</td>
-                                <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@x.MovieId">Edit</a></td>
-                                <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@x.MovieId">Mark Task as Complete</a></td>
+                                <td><a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a></td>
+                                <td><a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Mark Task as Complete</a></td>
                             </tr>
                         }
                     }
